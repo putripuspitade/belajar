@@ -1,10 +1,12 @@
 require 'byebug'
 require 'capybara'
-require 'cucumber'
-require 'selenium-webdriver'
 require 'capybara/cucumber'
+# require 'capybara-screenshot/cucumber'
+require 'capybara/rspec'
+require 'selenium-webdriver'
 require 'site_prism'
-require 'rspec'
+require 'site_prism/table'
+require 'cucumber'
 
 options = Selenium::WebDriver::Chrome::Options.new
 
@@ -14,6 +16,6 @@ end
 
 Capybara.configure do |config|
     config.default_driver = :chrome
-    config.default_max_wait_time = 60
+    config.default_max_wait_time = 120
 end
 
