@@ -35,6 +35,11 @@ path = "#{Dir.pwd}/reports"
 Capybara::Screenshot.register_driver :chrome do |driver, path|
     driver.browser.save_screenshot path
 end
+
+Capybara.default_driver = 'chrome'.to_sym
+Capybara::Screenshot.autosave_on_failure = true
+Capybara::Screenshot.prune_strategy = { keep: 50 }
+Capybara::Screenshot.append_timestamp = true
 Capybara::Screenshot.autosave_on_failure = true
 Capybara::Screenshot.webkit_options = {
   width: 100,
