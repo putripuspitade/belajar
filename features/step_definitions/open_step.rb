@@ -1,6 +1,5 @@
 Given("open tokopedia page") do
     @app.main_page.load
-    expect(1).to eql 2
     Capybara.current_session.driver.browser.execute_script "window.scrollBy(0,1000)"
     @app.main_page.wait_until_basic_layout_visible
     

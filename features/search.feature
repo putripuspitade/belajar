@@ -1,3 +1,5 @@
+Feature: Search Tokopedia
+
 Scenario: User able to find product "mobil remote"
     Given open tokopedia page 
     When user find product "mobil remote"
