@@ -1,9 +1,10 @@
 Given("open tokopedia page") do
-    byebug
     @app.main_page.load
+    expect(1).to eql 2
+    Capybara.current_session.driver.browser.execute_script "window.scrollBy(0,1000)"
     @app.main_page.wait_until_basic_layout_visible
     
-    if @app.main_page.has_no_telp_pulsa?(wait: 1)
+    if @app.main_page.has_no_telp_pulsa?(wait: 2)
         p 'yeay input no telepon ditemukan'
     else
         p 'input no telp ga ditemuin'

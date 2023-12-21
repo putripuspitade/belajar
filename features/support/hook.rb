@@ -6,6 +6,11 @@ Before do |scenario|
 end 
 
 After do |scenario|
+    byebug
+    if scenario.failed?
+        Capybara.using_session_with_screenshot(Capybara.session_name.to_s) do
+        end
+    end
 end
 
 
